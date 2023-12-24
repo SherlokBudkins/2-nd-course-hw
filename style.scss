@@ -49,6 +49,10 @@
         line-height: normal;
         color: #FFF;
         margin-top: 44px;
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -67,6 +71,10 @@
         align-items: flex-end;
         border-radius: 16px;
         background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.05);
+        }
         &-1 {
             background-image: url(img/game1.jpg);
         }
@@ -85,7 +93,10 @@
             color: #FFF;
             padding-left: 32px;
             padding-bottom: 32px;
+            text-decoration: none;
         }
     }
 }
+
+@import 'mobile.scss';
 

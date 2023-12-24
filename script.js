@@ -1,52 +1,61 @@
-const z = '20';
-alert(z);
 
-const phone = '2007';
-alert(phone);
-
-const creator = 'Брендан Эйх';
-alert(creator);
-
-const x = Number ('10');
-const y = Number ('2');
-alert(x + y);
-alert(x - y);
-alert(x * y);
-alert(x / y);
-
-let result = Number (y**5);
-alert(result);
-
-const a = Number ('9');
-const b = Number ('2');
-let result2 = Number (a % b);
-alert(result2);
-
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num++;
-num--;
-alert(num);
-
-const age1 = prompt ('Сколько вам лет?');
-alert(age1);
-
-const user = {
-	name: String ('Petr'),
-	age: Number ('100'),
-	isAdmin: Boolean ('true'), 
+let password = 2000;
+let password1 = prompt('Введите пароль');
+if (password == password1) {
+	alert("Пароль введен верно");
+	
+} else {
+	alert("Пароль введен неправильно");
 }
-user['city of residence'] = "Moscow";
-user.age = Number ('50');
-delete user['city of residence'];
-let info = prompt("Какую информацию хотите узнать о пользователе?");
-alert(user[info]);
 
-let userName = prompt('Ваше имя');
-alert(`Привет, ${userName}!`);
+let c = 2;
+if (0 < c && c < 10) {
+	alert('Верно');
+} else {
+	alert('Неверно');
+};
+
+
+let d = 101;
+let e = 11;
+if (d > 100 || e > 100) {
+	alert('Верно');
+} else {
+	alert('Неверно');
+}
+
+let a = '2';
+let b = '3';
+
+alert(Number(a) + Number(b));
+
+let monthNumber = String(prompt('Введите месяц'));
+switch(monthNumber) {
+	case '1':
+	case '2':
+	case '12':		
+		console.log('Зима');
+		break;
+	case '3':
+	case '4':
+	case '5':		
+		console.log('Весна');
+		break;
+	case '6':
+	case '7':
+	case '8':	
+		console.log('Лето');
+		break;
+	case '9':
+	case '10':
+	case '11':		
+		console.log('Осень');
+		break;
+	default:
+		console.log('Такого месяца нет');
+		break;	
+}
+
 
 
 
