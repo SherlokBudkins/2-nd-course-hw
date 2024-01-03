@@ -1,39 +1,115 @@
-let i = 0;
-while (i < 2){
-alert ('Привет');
-i++;
+//Задание 1
+function comparison(a, b) {
+	if (a <= b) {
+		return a;
+	} else {
+		return b;
+	}
 }
 
-let n = 1;
-while (n < 6){
-	console.log (n);
-	n++;
+console.log(comparison(8, 4));
+console.log(comparison(6, 6));
+
+
+//задание 2
+function num(a) {
+	if (a % 2 == 0) {
+        return `Число четное`;
+    } else {
+        return `Число нечетное`;
+    }	
 }
 
-for(let k = 7; k < 23; k++){
-	console.log (k);
+console.log(num(6));
+console.log(num(5));
+
+
+
+//Задание 3
+function square(a) {
+    a**2;
 }
 
+console.log (square(5));
 
-let obj= {
-'Коля': '200',
-'Вася': '300',
-'Петя': '400',
+function square(a) {
+    return a**2;
+}
+
+console.log (square(5));
+
+
+//задание 4
+let age = prompt("Сколько Вам лет?");
+
+if (age <= 12) {
+    function printMessage () {
+        console.log("Привет, друг");
+    }
+} else {
+    function printMessage () {
+        console.log("Добро пожаловать!");
+    }
+}
+if (age < 0) {
+
+    function printMessage () {
+        console.log("Вы ввели неправильное значение!");
+}
+}
+
+printMessage();
+
+
+//Задание 5
+function check(a , b) {
+    if (isNaN(a) || isNaN(b)) {
+        return(`Одно или оба значения не являются числом`);
+    } else {
+        return a * b;
+    }
+}
+console.log(check(8 , 5));
+console.log(check(8 , `k`));
+
+
+
+
+//Задание 6
+function num1() {
+    let userNum = prompt('Введи число');
+    let squared = userNum ** 3;
+    isNaN(userNum) ? console.log('Переданный параметр не является числом') : console.log(`${userNum} в кубе равняется ${squared}`);
+}
+num1();
+
+
+
+// Задание 7
+function getArea() {
+    return 3.14 * (this.radius ** 2);
+}
+
+function getPerimeter() {
+    return 2 * 3.14 * this.radius;
+}
+
+const circle1 = {
+    radius: 5,
+
+    getArea: getArea,
+    getPerimeter: getPerimeter,
 };
-for (let key in obj){
-	alert(`${key} — зарплата ${obj[key]} долларов`);
-}
 
+const circle2 = {
+    radius: 4,
 
-let number = 1000;
-let counter = 0;
-for (;number >= 50; number /= 2){
-	counter++;
-}
-console.log(`Получилось число ${number}. Количество интераций равно ${counter} `);
+    getArea: getArea,
+    getPerimeter: getPerimeter,
+};
 
-
-for (let dayNumber = 1; dayNumber <= 31; dayNumber += 7){
-		console.log(`Сегодня пятница, ${dayNumber}-е число. Необходимо подготовить отчет.`)
-}
+console.log(circle1.getArea());
+console.log(circle1.getPerimeter());
+console.log(circle2.getArea());
+console.log(circle2.getPerimeter());
 
