@@ -1,92 +1,89 @@
-// Задание 1
-const numbs = [1, 5, 4, 10, 0, 3];
-for (let i = 0; i < numbs.length; i++) {
-	if (numbs[i] == 0) break;
-	console.log(numbs[i]);
-}
-
+//Задание 1
+let str = 'js';
+console.log(new String(str).toUpperCase());
 
 //Задание 2
-const numbs2 = [1, 5, 4, 10, 0, 3];
-console.log(numbs2.indexOf(4));
+function stringFilter(arr, str1) {
+    return arr.filter(item => item.toLowerCase().startsWith(str1.toLowerCase()));
+}
+
+console.log(stringFilter(['Кошка', 'Кит', 'Комар', 'Носорог'], 'ко')); // ['кошка', 'комар']
+console.log(stringFilter(['яблоко', 'груша', 'гриб', 'огурец'], 'гру')); // ['груша']
+console.log(stringFilter(['Дом', 'Банк', 'Больница', 'Театр'], 'Кино')); // []
+
 
 //Задание 3
-const numbs3 = [1, 3, 5, 10, 20];
-console.log(numbs3.join(' '));
+let number = 32.58884;
+console.log(Math.floor(number));
+console.log(Math.ceil(number));
+console.log(Math.round(number));
 
 //Задание 4
-let arr = [
-    [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1],
-];
-console.log(arr);
+const nums = [52, 53, 49, 77, 21, 32];
+console.log(Math.min(...nums));
+console.log(Math.max(...nums));
 
 //Задание 5
-let arr2 = [1, 1, 1];
-arr2.push(2, 2, 2);
-console.log(arr2);
+function getRandomInt(minValue, maxValue) {
+    let randomNumbs = Math.round(Math.random() * 10);
+
+    console.log(randomNumbs);
+}
+
+getRandomInt();
+getRandomInt();
+getRandomInt();
+
 
 //Задание 6
-let arr3 = [9, 8, 7, 'a', 6, 5];
-arr3.sort();
-arr3.pop(String);
-console.log(arr3);
+function getRandomArrNumbers(num) {
+    const result = [];
+    for (let i = 0; i < Math.floor(num / 2); i++) {
+        result.push(Math.round(Math.random() * num))
+    }
+    return result
+}
+
+console.log(getRandomArrNumbers(7));
+console.log(getRandomArrNumbers(12));
 
 //Задание 7
-let arr4 = [9, 8, 7, 6, 5];
-if (arr4.includes(Number(prompt('Угадай число')))) {
-    console.log('Угадал');
-} else {
-    console.log('Не угадал');
+function getRandomNum(min, max) {
+    let randomNumber = Math.round(Math.random() * (max - min) + min);
+    console.log(randomNumber);
 }
+
+getRandomNum(3, 5);
 
 //Задание 8
-let greetings = 'abcdef';
-let arrayGreetings = greetings.split('');
-arrayGreetings.reverse();
-arrayGreetings = arrayGreetings.join('');
-console.log(arrayGreetings);
+console.log(new Date());
 
 //Задание 9
-const arr5 = [
-    [1, 2, 3],
-    [4, 5, 6],
-];
-const flat = arr5.flat();
-console.log(flat);
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 73);
+console.log(currentDate);
 
 //Задание 10
-const arr6 = [3, 4, 5, 6, 7];
+function formatedDateAndTime(inputDate) {
+    const daysOfWeeks = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+    const dayOfTheWeek = daysOfWeeks[inputDate.getDay()];
 
-for(let i = 0; i < arr6.length; i++) {
-    console.log(arr6[i] + arr6[i + 1]);
+    const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+    const month = months[inputDate.getMonth()];
+
+    const year = inputDate.getFullYear();
+    const day = inputDate.getDate();
+    const hours = inputDate.getHours();
+    const minutes = inputDate.getMinutes();
+    const seconds = inputDate.getSeconds();
+
+    const formatedDate = `Дата: ${day} ${month} ${year} - это ${dayOfTheWeek}`;
+    const formatedTime = `Время: ${hours}:${minutes}:${seconds}`;
+
+    return `${formatedDate}\n${formatedTime}`;
+
 }
+console.log(formatedDateAndTime(new Date()));
 
 
-//Задание 11
-const mult = [2, 3, 4, 5, 6];
-const tax = mult.map(el => el**2);
-console.log(tax);
-
-
-//Задание 12
-function arrSum(num) {
-    for (let i = 0; i < num.length; i++) {
-    console.log(num[i].length);
-} 
-} 
-arrSum(['слово', '', 'слог', 'длинное предложение', 'буква']); 
-
-//Задание 13
-function filterPositive(array) {
-    const negative = [];
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] < 0) {
-            negative.push(array[i])
-        }
-    }
-    return negative
-}
-console.log(filterPositive([-1, 0, 5, -10, 56]));
-console.log(filterPositive([-25, 25, 0, -1000, -2]));
+//Задание 11 смотреть в SideScript.js
