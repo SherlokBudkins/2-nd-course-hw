@@ -1,89 +1,79 @@
 //Задание 1
-let str = 'js';
-console.log(new String(str).toUpperCase());
+const people = [
+    { name: 'Глеб', age: 29 },
+    { name: 'Анна', age: 17 },
+    { name: 'Олег', age: 7 },
+    { name: 'Оксана', age: 47 }
+ ];
+ console.log(people.sort((a, b) => a.age - b.age));
 
-//Задание 2
-function stringFilter(arr, str1) {
-    return arr.filter(item => item.toLowerCase().startsWith(str1.toLowerCase()));
+ //задание 2
+ function isPositive(number) { 
+    if (number > 0) { 
+    return number;
+    } 
+} 
+ function isMale(name, gender) { 
+    if (person.gender === 'male') {
+     return name + gender; 
+    } 
+} 
+ function filter(array, ruleFunction) { 
+    let newArray = []; 
+    for (let i = 0; i < array.length; i++) { 
+        if (ruleFunction(array[i])) {
+            newArray.push(array[i]);
+    }
 }
+    return newArray;
+} 
+    console.log(filter([3, -4, 1, 9], isPositive));
+    const people1 = [
+    {name: 'глеб', gender: 'male'},
+    {name: 'анна', gender: 'female'},
+    {name: 'олег', gender: 'male'},
+    {name: 'оксана', gender: 'female'}
+    ];
 
-console.log(stringFilter(['Кошка', 'Кит', 'Комар', 'Носорог'], 'ко')); // ['кошка', 'комар']
-console.log(stringFilter(['яблоко', 'груша', 'гриб', 'огурец'], 'гру')); // ['груша']
-console.log(stringFilter(['Дом', 'Банк', 'Больница', 'Театр'], 'Кино')); // []
-
+    console.log(filter(people1, isMale));
 
 //Задание 3
-let number = 32.58884;
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
+let currentDay = new Date();
+const timer = (currentDay) => {
+    const timeId = setInterval(() => {
+        console.log(currentDay);
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(timeId)
+        console.log("30 секунд прошло")
+    }, 30000);
+}
+timer(currentDay);
 
 //Задание 4
-const nums = [52, 53, 49, 77, 21, 32];
-console.log(Math.min(...nums));
-console.log(Math.max(...nums));
+function delayForSecond(callback) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+    }, 1000);
+  callback();
+}
+
+delayForSecond(function () {
+  console.log('Привет, Глеб!');
+})
 
 //Задание 5
-function getRandomInt(minValue, maxValue) {
-    let randomNumbs = Math.round(Math.random() * 10);
-
-    console.log(randomNumbs);
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if(cb) { cb(); }
+    }, 1000)
 }
-
-getRandomInt();
-getRandomInt();
-getRandomInt();
-
-
-//Задание 6
-function getRandomArrNumbers(num) {
-    const result = [];
-    for (let i = 0; i < Math.floor(num / 2); i++) {
-        result.push(Math.round(Math.random() * num))
-    }
-    return result
+function sayHi(name) {
+    console.log(`Привет, ${name}!`);
 }
-
-console.log(getRandomArrNumbers(7));
-console.log(getRandomArrNumbers(12));
-
-//Задание 7
-function getRandomNum(min, max) {
-    let randomNumber = Math.round(Math.random() * (max - min) + min);
-    console.log(randomNumber);
-}
-
-getRandomNum(3, 5);
-
-//Задание 8
-console.log(new Date());
-
-//Задание 9
-let currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 73);
-console.log(currentDate);
-
-//Задание 10
-function formatedDateAndTime(inputDate) {
-    const daysOfWeeks = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
-    const dayOfTheWeek = daysOfWeeks[inputDate.getDay()];
-
-    const months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
-    const month = months[inputDate.getMonth()];
-
-    const year = inputDate.getFullYear();
-    const day = inputDate.getDate();
-    const hours = inputDate.getHours();
-    const minutes = inputDate.getMinutes();
-    const seconds = inputDate.getSeconds();
-
-    const formatedDate = `Дата: ${day} ${month} ${year} - это ${dayOfTheWeek}`;
-    const formatedTime = `Время: ${hours}:${minutes}:${seconds}`;
-
-    return `${formatedDate}\n${formatedTime}`;
-
-}
-console.log(formatedDateAndTime(new Date()));
+delayForSecond(() => sayHi('Глеб'));
 
 
-//Задание 11 смотреть в SideScript.js
+
