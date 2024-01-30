@@ -8,60 +8,58 @@ const people = [
  console.log(people.sort((a, b) => a.age - b.age));
 
  //задание 2
- function isPositive(number) { 
-    if (number > 0) { 
-    return number;
-    } 
-} 
- function isMale(name, gender) { 
-    if (person.gender === 'male') {
-     return name + gender; 
-    } 
-} 
- function filter(array, ruleFunction) { 
-    let newArray = []; 
-    for (let i = 0; i < array.length; i++) { 
-        if (ruleFunction(array[i])) {
-            newArray.push(array[i]);
+ function isPositive(number) {
+    return number > 0;
+  }
+  
+  function isMale(person) {
+    return person.gender === 'male';
+  }
+  
+  function filter(array, ruleFunction) {
+    const filteredArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (ruleFunction(array[i])) {
+        filteredArray.push(array[i]);
+      }
     }
-}
-    return newArray;
-} 
-    console.log(filter([3, -4, 1, 9], isPositive));
-    const people1 = [
-    {name: 'глеб', gender: 'male'},
-    {name: 'анна', gender: 'female'},
-    {name: 'олег', gender: 'male'},
-    {name: 'оксана', gender: 'female'}
-    ];
-
-    console.log(filter(people1, isMale));
+    return filteredArray;
+  }
+  
+  console.log(filter([3, -4, 1, 9], isPositive)); 
+  
+  const people1 = [
+     {name: 'Глеб', gender: 'male'},
+     {name: 'Анна', gender: 'female'},
+     {name: 'Олег', gender: 'male'},
+     {name: 'Оксана', gender: 'female'}
+  ];
+  
+  console.log(filter(people1, isMale)); 
 
 //Задание 3
-let currentDay = new Date();
-const timer = (currentDay) => {
-    const timeId = setInterval(() => {
-        console.log(currentDay);
-    }, 1000);
-
-    setTimeout(() => {
-        clearInterval(timeId)
-        console.log("30 секунд прошло")
-    }, 30000);
-}
-timer(currentDay);
+function printCurrentDate() {
+    console.log(new Date());
+  }
+  
+  let counter = 0;
+  const intervalId = setInterval(() => {
+    printCurrentDate();
+    counter += 3;
+    if (counter >= 30) {
+      clearInterval(intervalId);
+      console.log('30 секунд прошло');
+    }
+  }, 3000);
 
 //Задание 4
 function delayForSecond(callback) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-    }, 1000);
-  callback();
-}
-
-delayForSecond(function () {
-  console.log('Привет, Глеб!');
-})
+    setTimeout(callback, 1000);
+  }
+  
+  delayForSecond(function () {
+    console.log('Привет, Глеб!');
+  });
 
 //Задание 5
 function delayForSecond(cb) {
@@ -74,6 +72,16 @@ function sayHi(name) {
     console.log(`Привет, ${name}!`);
 }
 delayForSecond(() => sayHi('Глеб'));
+
+
+
+
+
+
+
+
+
+
 
 
 
