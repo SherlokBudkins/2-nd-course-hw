@@ -52,6 +52,10 @@
   line-height: normal;
   color: #FFF;
   margin-top: 44px;
+  transition: all 0.3s;
+}
+.header__button:hover {
+  transform: scale(1.05);
 }
 
 .content {
@@ -70,6 +74,10 @@
   align-items: flex-end;
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url(<path-to-image>), lightgray 50%/cover no-repeat;
+  transition: all 0.3s;
+}
+.content__product:hover {
+  transform: scale(1.05);
 }
 .content__product-1 {
   background-image: url(img/game1.jpg);
@@ -89,4 +97,124 @@
   color: #FFF;
   padding-left: 32px;
   padding-bottom: 32px;
+  text-decoration: none;
+}
+
+.game {
+  background: #000915;
+}
+.game__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 233px;
+  padding-bottom: 233px;
+}
+.game__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 584px;
+}
+.game__heading {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+}
+.game__text {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  text-align: left;
+}
+.game__button {
+  width: 234.063px;
+  height: 48.603px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #9C0332;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game__button:hover {
+  border-radius: 30px;
+  background: #EB443F;
+}
+.game__img_mob {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 33px;
+  }
+  .header__head {
+    width: 343px;
+    font-size: 32px;
+    height: 77px;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+  }
+  .header__description {
+    font-size: 14px;
+    text-align: center;
+    width: 343px;
+  }
+  .game__content {
+    gap: 64px;
+    padding-top: 51px;
+    padding-bottom: 85px;
+  }
+  .game__info {
+    align-items: center;
+  }
+  .game__heading {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .game__text {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px;
+  }
+  .game__img {
+    display: none;
+  }
+  .game__img_mob {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */

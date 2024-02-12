@@ -49,6 +49,10 @@
         line-height: normal;
         color: #FFF;
         margin-top: 44px;
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -67,6 +71,10 @@
         align-items: flex-end;
         border-radius: 16px;
         background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.05);
+        }
         &-1 {
             background-image: url(img/game1.jpg);
         }
@@ -85,7 +93,76 @@
             color: #FFF;
             padding-left: 32px;
             padding-bottom: 32px;
+            text-decoration: none;
         }
     }
 }
+
+.game {
+    background: #000915;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 233px;
+        padding-bottom: 233px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        width: 584px;
+    }
+
+    &__heading {
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: left;
+    }
+
+    &__text {
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 32px;
+        text-align: left;
+    }
+
+    &__button {
+        width: 234.063px;
+        height: 48.603px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #9C0332;
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            border-radius: 30px;
+            background: #EB443F;
+        }
+    }
+    
+    &__img_mob {
+        display: none;
+    }
+}
+
+@import 'mobile.scss';
 
